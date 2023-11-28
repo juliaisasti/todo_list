@@ -64,6 +64,10 @@ function App() {
 
     const confirmated = confirm(`Desea crear el to do? Tarea: ${tarea}`);
 
+    if (tarea.length > 30 || tarea.length < 6) {
+      errors = [...errors, 'La tarea debe tener entre 6 y 30 caracteres'];
+    };
+
     if (confirmated) {
       alert("To do creado");
       setData(myTodo); // {} deseo
@@ -72,7 +76,8 @@ function App() {
       e.target.descripcion.value="";
       e.target.fecha.value="";
     }
-    target.value=""
+
+    
   };
 
   // Función para mostrar botón
